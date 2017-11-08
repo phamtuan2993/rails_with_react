@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.css
+ *= require bootstrap-grid.css
+ *= require bootstrap-reboot.css
  */

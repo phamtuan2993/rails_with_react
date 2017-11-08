@@ -1,0 +1,19 @@
+= form_for @idea do |f|
+	.field
+		= f.label :name
+		%br/
+		= f.text_field :name
+
+	.field
+		= f.label :description
+		%br/
+		= f.text_area :description
+
+	.field
+		= f.label :pictures
+		%br/
+		= f.fields_for :pictures, html: {multiple_part: true} do |pictures_form|
+			= pictures_form.file_field :image
+
+	.actions
+		= f.submit

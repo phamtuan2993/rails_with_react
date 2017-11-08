@@ -1,0 +1,25 @@
+- unless notice.blank?
+  %p#id =notice
+
+%h1 Listing Ideas
+
+%table.table.table-striped.table-dark.table-hover
+  %thead.thead-dark
+    %tr
+      %th Image
+      %th Name
+      %th Description
+      %th{ colspan: '2' } Actions
+  %tbody
+    - @ideas.each do |idea|
+      %tr
+        %td
+          = image_tag idea.pictures.first.image.url(:thumb)
+        %td= idea.name
+        %td= idea.description
+        %td= link_to 'Show', edit_idea_path(idea)
+        %td= link_to 'Destroy', idea, method: :delete, data: {confirm: 'Are you sure?'}
+
+%br/
+
+= link_to 'New Idea', new_idea_path

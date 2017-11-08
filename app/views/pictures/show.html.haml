@@ -1,0 +1,18 @@
+- unless notice.blank?
+	%p#notice= notice
+
+%p
+	%strong Idea:
+	= @picture.idea
+
+= link_to 'Back to idea', idea_path(@picture.idea)
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Idea:</strong>
+  <%= @picture.idea %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

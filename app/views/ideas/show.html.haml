@@ -1,0 +1,16 @@
+- unless notice.blank?
+	%p#notice = notice
+
+%p
+	%strong Name:
+	= @idea.name
+
+%p
+	%strong Description:
+	= @idea.description
+
+%p
+	%strong Pictures:
+- @idea.pictures.map(&:image).each_with_index do |img, index|
+	.image-block
+		= image_tag img.url(:thumb)
